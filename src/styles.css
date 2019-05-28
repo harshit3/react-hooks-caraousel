@@ -1,0 +1,132 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+span {
+  padding: 0 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.container {
+  position: relative;
+}
+
+.icons {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  font-size: 250%;
+  visibility: hidden;
+  transition: visibility 0s, opacity 0.5s;
+}
+
+.play-icon {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.prev-icon {
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.next-icon {
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.arrow::after,
+.arrow::before {
+  content: "";
+  border: 6px solid rgb(68, 68, 68);
+  border-radius: 10px;
+  display: inline-block;
+  height: 20px;
+}
+
+.left::after {
+  transform: rotate(45deg) translateX(-8px) translateY(2px);
+}
+
+.left::before {
+  transform: rotate(-45deg) translateX(-6px) translateY(12px);
+}
+
+.right::before {
+  transform: rotate(-45deg) translateX(8px) translateY(2px);
+}
+
+.right::after {
+  transform: rotate(45deg) translateX(6px) translateY(12px);
+}
+
+.pause {
+  padding: 5px;
+  padding-top: 14px;
+}
+
+.pause::after,
+.pause::before {
+  content: "";
+  border: 6px solid rgb(68, 68, 68);
+  border-radius: 10px;
+  margin: 3px;
+  display: inline-block;
+  height: 35px;
+}
+
+.play {
+  background-color: rgb(68, 68, 68);
+  text-align: left;
+  transform: rotate(-90deg) skewX(-30deg) scale(1, 0.866);
+  margin-top: -10px;
+}
+
+.play:before,
+.play:after {
+  content: "";
+  position: absolute;
+  background-color: inherit;
+}
+
+.play,
+.play:before,
+.play:after {
+  width: 30px;
+  height: 30px;
+  border-top-right-radius: 30%;
+}
+
+.play:before {
+  transform: rotate(-135deg) skewX(-45deg) scale(1.414, 0.707)
+    translate(0, -50%);
+}
+
+.play:after {
+  transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translate(50%);
+}
+
+.image {
+  animation: fade 2.7s;
+  animation-direction: normal;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.3;
+  }
+  30% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
